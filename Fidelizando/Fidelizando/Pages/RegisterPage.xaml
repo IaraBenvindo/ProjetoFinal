@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fidelizando.Pages.RegisterPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <Entry Placeholder="Nome completo" Text="{Binding User.Name}" FontSize="Medium" HorizontalTextAlignment="Center"/>
+                <Entry Placeholder="Email" Text="{Binding User.Email}" FontSize="Medium" HorizontalTextAlignment="Center" />
+                <Entry Placeholder="Senha" Text="{Binding User.Password}" IsPassword="True" FontSize="Medium" HorizontalTextAlignment="Center" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="É bolsista?" HorizontalOptions="EndAndExpand" Grid.Column="0" />
+                    <Switch Grid.Column="1" HorizontalOptions="StartAndExpand" IsToggled="{Binding User.IsScholarship}" />
+                </Grid>
+                <Button Text="Finalizar cadastro" Command="{Binding RegisterCommand}" HorizontalOptions="Center" BackgroundColor="Blue" TextColor="White" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
